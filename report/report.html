@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Homework 2 Report</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c8a0124-1154-800c-8a92-c548cb3b5b9a" class="page sans"><header><h1 class="page-title">Homework 2 Report</h1><p class="page-description"></p></header><div class="page-body"><figure id="1c8a0124-1154-80f3-891c-ecbaf0f444af" class="image"><a href="477bef8a-111c-448f-b885-4fc9ba2332c7.png"><img style="width:454.1695702671313px" src="477bef8a-111c-448f-b885-4fc9ba2332c7.png"/></a></figure><h2 id="1c8a0124-1154-8004-9e7a-f7ee26b37aa0" class="">1. Abstract</h2><p id="1c8a0124-1154-8050-926e-d9a877dbe664" class="">The program simulates a 3D system with spheres moving within a cubic world. It has features of collision detection, response handling, and rendering of the simulation.  Coded in C++, OpenGL, and glm libray, we implemented this collision detection simulator from scratch including data structure, algrithem, and rendering pipeline. Also, we provide a nice input UI panel to adjust different parameters including numberOfSpheres, there complexity (achieved by lathing),  velocity, mass, radius, world size and (broad) collision detection methed. User can freely navigate within the whole 3D scene during simulation.</p><figure id="1c8a0124-1154-8098-bae7-d9e158d8c143"><div class="source"><a href="https://youtu.be/ltwDijyG6_Q">https://youtu.be/ltwDijyG6_Q</a></div></figure><hr id="1c8a0124-1154-8037-8cb8-eb4b91753668"/><h2 id="1c8a0124-1154-8034-8b64-deb068e6d106" class="">2. Implementations</h2><ol type="1" id="1c8a0124-1154-8095-b908-d7384dbd6aaf" class="numbered-list" start="1"><li><strong>SimulatorWorld</strong><ul id="1c8a0124-1154-801c-979b-dd9bc02e1791" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: Manages the simulation environment, including initialization, stepping through simulation frames, and rendering.</li></ul><ul id="1c8a0124-1154-80b7-8614-d216b2166380" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong>:<ul id="1c8a0124-1154-8097-b6ab-f433e9f32701" class="bulleted-list"><li style="list-style-type:circle">Initializes the world with spheres and boundaries.</li></ul><ul id="1c8a0124-1154-8034-b792-cd6efcb09b69" class="bulleted-list"><li style="list-style-type:circle">Updates sphere positions based on velocity and handles collisions.</li></ul><ul id="1c8a0124-1154-80bc-b624-f3e3aaee5704" class="bulleted-list"><li style="list-style-type:circle">Provides methods to reset, stop, and render the simulation.</li></ul></li></ul><ul id="1c8a0124-1154-8036-a228-c13a50499a62" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Attributes</strong>:<ul id="1c8a0124-1154-806a-b5c0-cc3bf67637e0" class="bulleted-list"><li style="list-style-type:circle">spheres: Array of SphereBV objects.</li></ul><ul id="1c8a0124-1154-80d4-9a28-d67df163fcb4" class="bulleted-list"><li style="list-style-type:circle">cubicWorldVertices and indices: Used for rendering the world boundary.</li></ul></li></ul><ul id="1c8a0124-1154-80cd-ba8e-cfabcabc74b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Methods</strong>:<ul id="1c8a0124-1154-80de-8539-c98ca5354f0b" class="bulleted-list"><li style="list-style-type:circle">initializeWorld(): Sets up spheres with random properties.</li></ul><ul id="1c8a0124-1154-8058-89f6-e0ecd576ded9" class="bulleted-list"><li style="list-style-type:circle">stepSimulation(deltaTime): Advances the simulation by detecting and resolving collisions.</li></ul></li></ul></li></ol><ol type="1" id="1c8a0124-1154-80d6-b551-f15293bd1722" class="numbered-list" start="2"><li><strong>SphereBV</strong><ul id="1c8a0124-1154-806e-b52a-d4cf290a487c" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: Represents a bounding volume for a sphere, including spheres properties and SphereMesh.</li></ul><ul id="1c8a0124-1154-80c2-af1b-d305118b110f" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong>:<ul id="1c8a0124-1154-8063-a60b-e92534f93c62" class="bulleted-list"><li style="list-style-type:circle">Stores sphere attributes like position, radius, velocity, and mass.</li></ul></li></ul><ul id="1c8a0124-1154-8011-b2a4-c6cd765ff56b" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Attributes</strong>:<ul id="1c8a0124-1154-804e-8a4f-e785576c326f" class="bulleted-list"><li style="list-style-type:circle">center, radius, velocity, mass: Define the sphere&#x27;s physical state.</li></ul><ul id="1c8a0124-1154-806d-8b75-c1135ee68215" class="bulleted-list"><li style="list-style-type:circle">mesh: A SphereMesh object for rendering.</li></ul><ul id="1c8a0124-1154-8022-9e81-f825cfcf7648" class="bulleted-list"><li style="list-style-type:circle">transform: Model Transformation matrix for positioning and scaling.</li></ul></li></ul></li></ol><ol type="1" id="1c8a0124-1154-8098-b7b6-c6bfe556b29b" class="numbered-list" start="3"><li><strong>SphereMesh</strong><ul id="1c8a0124-1154-8060-b7f0-e33c71889b87" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: Generates and stores the mesh data for a sphere using lathing.</li></ul><ul id="1c8a0124-1154-802f-9ab8-eaac8f88e6ff" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong>:<ul id="1c8a0124-1154-809e-aeac-dd6c6f7c77b7" class="bulleted-list"><li style="list-style-type:circle">Creates vertices and indices for rendering a sphere based on its complexity level.</li></ul></li></ul><ul id="1c8a0124-1154-8035-b0ca-fb9d215727cc" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Attributes</strong>:<ul id="1c8a0124-1154-803f-88b8-cd4ac8f1314e" class="bulleted-list"><li style="list-style-type:circle">vertices: List of vertices defining the sphere&#x27;s geometry.</li></ul><ul id="1c8a0124-1154-808a-ab12-e63a3db963ce" class="bulleted-list"><li style="list-style-type:circle">indices: Indices for rendering the sphere as a triangular mesh.</li></ul></li></ul></li></ol><ol type="1" id="1c8a0124-1154-80b9-9a28-caef0bd2f584" class="numbered-list" start="4"><li><strong>CollisionDetection</strong><ul id="1c8a0124-1154-80e5-b15e-dacc18b24380" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: Handles collision detection and response between spheres and world boundary.</li></ul><ul id="1c8a0124-1154-8013-bf52-cdbe728829eb" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong>:<ul id="1c8a0124-1154-802c-a9fb-e75e61dfcf08" class="bulleted-list"><li style="list-style-type:circle">Implements broad-phase and narrow-phase collision detection.</li></ul><ul id="1c8a0124-1154-8004-a495-dfebad861c41" class="bulleted-list"><li style="list-style-type:circle">Resolves collisions using conservation of momentum and energy.</li></ul></li></ul><ul id="1c8a0124-1154-80ec-a0f5-f9fef7e1350a" class="bulleted-list"><li style="list-style-type:disc"><strong>Key Methods</strong>:<ul id="1c8a0124-1154-8090-a27a-e4b62a936424" class="bulleted-list"><li style="list-style-type:circle"><code>broadCollisionDetection()</code>: Uses Sweep and Prune or brute force to find potential collisions.</li></ul><ul id="1c8a0124-1154-8021-bbb3-d198bc9e0b46" class="bulleted-list"><li style="list-style-type:circle"><code>narrowCollisionDetection()</code>: Uses the GJK algorithm to confirm collisions.</li></ul><ul id="1c8a0124-1154-8029-87a5-f199ca1b199e" class="bulleted-list"><li style="list-style-type:circle"><code>handleCollision()</code>: Updates sphere velocities based on collision response.</li></ul><ul id="1c8a0124-1154-804f-86cb-da0b52e1b5f6" class="bulleted-list"><li style="list-style-type:circle">GJK(): Implements the Gilbert-Johnson-Keerthi algorithm for collision detection.</li></ul></li></ul></li></ol><ol type="1" id="1c8a0124-1154-8045-b20e-e9d30158371b" class="numbered-list" start="5"><li><strong>Utils</strong><ul id="1c8a0124-1154-8044-94fc-e3a376bd819a" class="bulleted-list"><li style="list-style-type:disc"><strong>Purpose</strong>: Provides utility functions for sorting, random number generation, and set operations.</li></ul><ul id="1c8a0124-1154-8041-b3b6-e2450122ad33" class="bulleted-list"><li style="list-style-type:disc"><strong>Responsibilities</strong>:<ul id="1c8a0124-1154-801b-970c-c549ba5944fd" class="bulleted-list"><li style="list-style-type:circle">Implements insertion sort for sorting endpoints in Sweep and Prune.</li></ul><ul id="1c8a0124-1154-8041-bc13-f6e4396766d3" class="bulleted-list"><li style="list-style-type:circle">Provides a method for three-set intersection to refine collision pairs.</li></ul></li></ul></li></ol><h2 id="1c8a0124-1154-802e-8919-dae9c45d14b5" class="">3. <strong>Physics and Rendering</strong></h2><ul id="1c8a0124-1154-80f8-aee7-e468f0c9a5da" class="bulleted-list"><li style="list-style-type:disc"><strong>Physics</strong>:<ul id="1c8a0124-1154-8031-a655-fe74a8fb4edf" class="bulleted-list"><li style="list-style-type:circle">Sphere velocities are updated based on collisions and boundary interactions.</li></ul><ul id="1c8a0124-1154-8049-9439-f78e3c13a308" class="bulleted-list"><li style="list-style-type:circle">Collision response uses conservation of momentum and energy equations.</li></ul></li></ul><ul id="1c8a0124-1154-8056-bdb0-cb84494a8187" class="bulleted-list"><li style="list-style-type:disc"><strong>Rendering</strong>:<ul id="1c8a0124-1154-8027-abd9-f8e600e8a009" class="bulleted-list"><li style="list-style-type:circle">OpenGL Pipeline is used to visualize the simulation result.</li></ul><ul id="1c8a0124-1154-8041-a5e5-c6eb5c40fa91" class="bulleted-list"><li style="list-style-type:circle">The cubic world boundary is represented as a wireframe</li></ul></li></ul><hr id="1c8a0124-1154-80a7-a367-cad1613c868e"/><h2 id="1c8a0124-1154-8022-b9c7-edc9739e84c7" class="">4. Experiment of different <strong>Collision Detection Design</strong></h2><ul id="1c8a0124-1154-807a-9650-dcb4167dcd04" class="bulleted-list"><li style="list-style-type:disc"><strong>Broad Phase</strong>:<ul id="1c8a0124-1154-80ce-b8e3-d82b4e29263e" class="bulleted-list"><li style="list-style-type:circle">Uses the Sweep and Prune algorithm (method 0) to reduce the number of potential collision pairs by sorting sphere endpoints along each axis.</li></ul><ul id="1c8a0124-1154-80a1-bfd8-c2b8353571fb" class="bulleted-list"><li style="list-style-type:circle">Supports brute force (method 1) and  grid-based detection (method 2).</li></ul></li></ul><ul id="1c8a0124-1154-80f3-93f7-e5659af3c2ba" class="bulleted-list"><li style="list-style-type:disc"><strong>Narrow Phase</strong>:<ul id="1c8a0124-1154-805b-8c54-c053f6c5e25d" class="bulleted-list"><li style="list-style-type:circle">Implemented the 3D GJK algorithm to confirm collisions between pairs identified in the broad phase.</li></ul></li></ul><p id="1c8a0124-1154-8094-8ff0-f66f5409c517" class="">
+</p><p id="1c8a0124-1154-802c-a728-d82627c13154" class="">In order to measure the performance of our algrithem in different senario, we did experiments based on different number of objects, complexity of objects, and sizes of objects, the velocity. Here are their raw data and analysis:</p><p id="1c8a0124-1154-80de-999c-d66aaea36569" class="">
+</p><p id="1c8a0124-1154-800f-ae1e-f313da7efa0f" class="">The experiments above shows the total time for the whole collision detection (broad and narrow) and response process within one frame/timestep. </p><p id="1c8a0124-1154-8017-87f2-f0c7af6e6fc8" class="">
+</p><figure id="1c8a0124-1154-80ff-99e8-d6e9cd2db16b" class="image"><a href="image.png"><img style="width:3567px" src="image.png"/></a></figure><p id="1c8a0124-1154-80ae-b6af-e4a6db291668" class="">
+</p><p id="1c8a0124-1154-806b-aa8a-c33014da8304" class="">For our current implementation, the sweep  and prune method outperforms brute force method in our current experiments, further check for implementation need to be done to optimize its performance of sweep and prune. It may caused by the fact that, in 3-dimensional sweep and prune, we need to check the potential collision in all three axis, and conducting a three set union is computational expensive, which exceeds the computational cost of simple brute force.</p><h3 id="1c8a0124-1154-8027-b25e-d5e0bebd0246" class="">Number of Objects Experiment</h3><p id="1c8a0124-1154-809e-ae74-d24d076e898a" class="">
+</p><figure id="1c8a0124-1154-803c-b0c3-da3c5bc1f8f8" class="image"><a href="image%201.png"><img style="width:660.9791870117188px" src="image%201.png"/></a></figure><p id="1c8a0124-1154-805f-9f42-e84199098d3f" class="">
+</p><p id="1c8a0124-1154-803e-99ff-fd733089ab67" class="">For both sweep_and_prune and brute force algrithoms, the calculation times increases when number of spheres increases. However, the time cost for sweep and prune, is more expensive than brute_force.</p><p id="1c8a0124-1154-808d-9001-c56b726a028e" class="">
+</p><h3 id="1c8a0124-1154-8000-a5d8-cf72c390e923" class="">Varying Object Complexity</h3><p id="1c8a0124-1154-8005-ab4c-f7ae773736fe" class="">
+</p><figure id="1c8a0124-1154-80b1-a7be-e87576e7db81" class="image"><a href="image%202.png"><img style="width:660.9791870117188px" src="image%202.png"/></a></figure><p id="1c8a0124-1154-80ab-84c1-dd14522d7006" class="">
+</p><p id="1c8a0124-1154-807f-9fa7-ec5d79de1437" class="">For both algrithems, they are not sensitive to the change of complexity. maybe because of the fact that the complexity will only influence the narrow detection phase (GJK), and in our implementation, in order to avoid infinite simplex finding caused by entering local optimal point (which happens in real test), we have set the max iteration times of 20. So in general, the narrow detection time also remains stable.</p><p id="1c8a0124-1154-80f9-b19a-c65de777e2cb" class="">
+</p><h3 id="1c8a0124-1154-80c6-8399-eaeb013ca3b4" class="">Varing Object Size</h3><p id="1c8a0124-1154-80d6-8daa-f7f21bfccf6a" class="">
+</p><figure id="1c8a0124-1154-80f7-a3b3-facd83187f99" class="image"><a href="image%203.png"><img style="width:660.9791870117188px" src="image%203.png"/></a></figure><p id="1c8a0124-1154-8067-a966-c6e9eaae893b" class="">
+</p><p id="1c8a0124-1154-8023-b93c-eb7cea0a2c0e" class="">With the increaing radius of spheres, the time cost of both algrithems increases. Since larger spheres are more likely to have collisions with others, resulting the time cost of narrow detection increase.</p><p id="1c8a0124-1154-805a-9660-cd0f6d72b3bf" class="">
+</p><h3 id="1c8a0124-1154-80b0-be78-da3134dce9b3" class="">Varying Velocity</h3><p id="1c8a0124-1154-803d-8442-ea4c2b077dfd" class="">
+</p><figure id="1c8a0124-1154-808f-9115-dc6ecebfa86d" class="image"><a href="image%204.png"><img style="width:660.9896240234375px" src="image%204.png"/></a></figure><p id="1c8a0124-1154-8061-8ef1-fe1ce10e4470" class="">In our experiment, the total time cost within one frame remains stable for both algrithems.  It may because of in unit timestep, the displacement of spheres is so small that no new collisions happen.</p><p id="1c8a0124-1154-80cf-839d-f9aa77c2345d" class="">
+</p><hr id="1c8a0124-1154-808d-93b5-fa09d3e7ba46"/><h2 id="1c8a0124-1154-8014-b932-f07a8e6c06b9" class="">5. Problem C: When Objects Have Same Size</h2><figure id="1c8a0124-1154-80e3-927b-f50906a4d0d4" class="image"><a href="image%205.png"><img style="width:660.9791870117188px" src="image%205.png"/></a></figure><p id="1c8a0124-1154-808b-b224-ccbff8444a9f" class="">In this case, we just simply implement brute force algrithem for broad phase collision detection. And the performance comparision shown in the above chart graph. In general, the brute force algrithem in our implementation outperforms the sweep and prune. It may be cause our 3D sweep and prune algrithem itset is expensive (our implementation). </p><p id="1c8a0124-1154-8061-b991-f4354ad92b1d" class="">
+</p><p id="1c8a0124-1154-8077-ac42-e546ab1cd039" class="">For future exploration, we believe the unit grid partioning algrithem for collision detection is the optimal choice when objects have same size, and the width of the unit cubic partition should be twice of the radius of spheres.</p><p id="1c8a0124-1154-80d0-80e7-c0c30e9894ef" class="">
+</p><hr id="1c8a0124-1154-808f-997a-f361476a1d1c"/><h3 id="1c8a0124-1154-802d-a845-db84a27e7cd7" class="">6. <strong>Potential Improvements</strong></h3><p id="1c8a0124-1154-807d-a8f1-d63ab5141dfd" class=""><strong>Collision Detection</strong>: </p><ul id="1c8a0124-1154-80e6-b26f-dc58c7731d10" class="bulleted-list"><li style="list-style-type:disc">Tunneling Issue exists</li></ul><ul id="1c8a0124-1154-8068-bd4e-e49de9bdfe3a" class="bulleted-list"><li style="list-style-type:disc">broad collision detection should be implemented in a more optimal way</li></ul><ul id="1c8a0124-1154-8087-900c-f2f429c49120" class="bulleted-list"><li style="list-style-type:disc">Should implement “Hill Climbing” technique for GJK algrithm to avoid stucking at local optimal point.</li></ul><p id="1c8a0124-1154-809d-bf87-fffd413c5278" class=""><strong>Collision Response</strong>: </p><ul id="1c8a0124-1154-808b-8263-d40134f19db7" class="bulleted-list"><li style="list-style-type:disc">Rigid body feature need to be added (angular velocity)</li></ul><ul id="1c8a0124-1154-80f1-8b03-efe876aec5b9" class="bulleted-list"><li style="list-style-type:disc">Gravity or other forces can be added.</li></ul><p id="1c8a0124-1154-8083-a892-c35f3b0ae75f" class=""><strong>Memory Management</strong>: Use smart pointers to manage dynamic memory more safely.</p><hr id="1c8a0124-1154-80c3-ad1c-f8a5cecad6cb"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

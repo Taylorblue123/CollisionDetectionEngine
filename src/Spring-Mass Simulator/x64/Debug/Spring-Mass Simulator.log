@@ -1,0 +1,35 @@
+﻿  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  main.cpp
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(45,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(46,27): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(17,24): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\main.cpp(188,80): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\main.cpp(240,69): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\main.cpp(256,69): warning C4267: “参数”: 从“size_t”转换到“GLsizei”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(22,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(94): message : 查看对正在编译的函数 模板 实例化“void Utils::insertionSort<Point>(std::vector<Point,std::allocator<Point>> &)”的引用
+  PerformanceAnalysis.cpp
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(45,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(46,27): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(17,24): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\PerformanceAnalysis.cpp(70,52): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\PerformanceAnalysis.cpp(78,49): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(22,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(94): message : 查看对正在编译的函数 模板 实例化“void Utils::insertionSort<Point>(std::vector<Point,std::allocator<Point>> &)”的引用
+  SimulatorWorld.cpp
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(45,29): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SphereMesh.h(46,27): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(17,24): warning C4244: “return”: 从“int”转换到“float”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\SimulatorWorld.cpp(90,24): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\utils.h(22,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\Spring-Mass Simulator\CollisionDetection.h(94): message : 查看对正在编译的函数 模板 实例化“void Utils::insertionSort<Point>(std::vector<Point,std::allocator<Point>> &)”的引用
+  正在生成代码...
+  Spring-Mass Simulator.vcxproj -> D:\2025Spring\CMSC838M\Homework1\ProjectSourceCode\CollisionPhysicEngine\x64\Debug\CollisionDetectionEngine.exe
